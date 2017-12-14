@@ -1,0 +1,34 @@
+<nav>
+    <ul class="alpha-font">
+        <a href="/home/{{slug}}"><li>home</li></a>
+        <a href="/home/{{slug}}/profile"><li>profile</li></a>
+    	<form method="POST" action="/logout" class="logoutform">
+    		<button class="logoutbtn">logout</button>
+    	</form>
+    </ul>
+</nav>
+
+<div class="container">
+	
+	<form method="POST" action="/home/{{slug}}/{{slug2}}/deletegroup" style="text-align:right;">
+		<button type="submit" class="alpha-font btn">Delete Category</button>
+	</form><br>
+	<p class="alpha-font title" style="margin-bottom:20px;">{{slug2}}</p>
+	<form method="POST" action="" onsubmit="return noEmpty2()">
+		<input type="text" class="beta-font inputs" name="tk" placeholder="Enter Task..."> <button class="beta-font btn">Add Todo</button>
+	</form>
+	<div class="task-container">
+		{{#each todos}}
+			<form method="POST" action="/home/{{user}}/{{slug2}}/deletetask">
+			{{#each items}}
+				<div class = "task beta-font">
+					<p class="beta-font"><input type="checkbox" name="deletetask" value={{_id}}> &nbsp;{{task}}</p>
+				</div>
+				<hr>
+			{{/each}}
+			<button type="submit" class="alpha-font btn" style="margin-top:30px;float:left;">Delete</button>
+			</form>
+		{{/each}}	
+	</div>
+	
+</div>
