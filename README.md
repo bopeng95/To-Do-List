@@ -35,7 +35,7 @@ An Example List inside todos:
 ```javascript
 {
   user: //to the corresponding user
-  name: "Friend's Birthday",
+  name: "Birthday",
   items: [
     { task: "go buy friend a gift", checked: false },
     { task: "get to best buy by 5pm", checked: true }
